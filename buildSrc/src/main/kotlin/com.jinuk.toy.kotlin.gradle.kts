@@ -2,6 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     kotlin("jvm")
+    id("org.jetbrains.kotlinx.kover")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 repositories {
@@ -33,5 +35,18 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
         jvmTarget = JvmTarget.fromTarget(jdkVersion)
+    }
+}
+
+kover.reports {
+    filters.excludes {
+        packages(
+            "com.jinuk.toy.infra",
+            "com.jinuk.toy.externalapi",
+        )
+    }
+
+    total {
+        xml.onCheck = true
     }
 }
