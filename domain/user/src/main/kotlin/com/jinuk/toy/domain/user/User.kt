@@ -10,11 +10,11 @@ data class User(
     override val _id: Long? = null,
     override val createdAt: LocalDateTime = LocalDateTime.now(),
     override val updatedAt: LocalDateTime = LocalDateTime.now(),
-
     val username: Username,
     val password: String,
 ) : BaseDomain(_id, createdAt, updatedAt) {
     override fun equals(other: Any?) = super.equals(other)
+
     override fun hashCode() = super.hashCode()
 
     companion object {
@@ -23,18 +23,20 @@ data class User(
     }
 }
 
-internal fun UserEntity.toModel() = User(
-    _id = id,
-    username = Username(username),
-    password = password,
-    createdAt = createdAt,
-    updatedAt = updatedAt,
-)
+internal fun UserEntity.toModel() =
+    User(
+        _id = id,
+        username = Username(username),
+        password = password,
+        createdAt = createdAt,
+        updatedAt = updatedAt,
+    )
 
-internal fun User.toEntity() = UserEntity(
-    id = _id,
-    username = username.value,
-    password = password,
-    createdAt = createdAt,
-    updatedAt = updatedAt,
-)
+internal fun User.toEntity() =
+    UserEntity(
+        id = _id,
+        username = username.value,
+        password = password,
+        createdAt = createdAt,
+        updatedAt = updatedAt,
+    )
