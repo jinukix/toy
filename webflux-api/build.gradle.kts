@@ -2,7 +2,7 @@ plugins {
     id("com.jinuk.toy.api")
 }
 
-val serviceName = "mvc-api"
+val serviceName = "webflux-api"
 
 tasks.bootJar {
     archiveBaseName.set(serviceName)
@@ -11,6 +11,6 @@ tasks.bootJar {
 dependencies {
     implementation(project(":util:jwt"))
 
-    implementation(Dependencies.SpringBoot.SPRING_BOOT_STARTER_WEB)
+    implementation(Dependencies.SpringBoot.SPRING_BOOT_STARTER_WEBFLUX)
     implementation(Dependencies.SpringBoot.SPRING_BOOT_STARTER_SECURITY)
 }

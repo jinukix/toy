@@ -1,23 +1,23 @@
 package com.jinuk.toy.util.objectmapper
 
-import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
-import com.fasterxml.jackson.module.kotlin.jacksonMapperBuilder
+import com.fasterxml.jackson.databind.module.SimpleModule
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageImpl
 
 @Configuration
 class ObjectMapperConfig {
     @Bean
     fun objectMapper(): ObjectMapper {
-        return jacksonMapperBuilder()
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
-            .addModules(
-                JavaTimeModule(),
-            )
-            .build()
+        val module = SimpleModule()
+        module.addSerializer(Page::class.java, PageSerializer())
+        module.addDeserializer(PageImpl::class.java, PageDeserializer())
+
+        return ObjectMapper().apply {
+            registerModule(module)
+            findAndRegisterModules()
+        }
     }
 }

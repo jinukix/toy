@@ -9,7 +9,7 @@ plugins {
 }
 
 dependencies {
-    implementation(Dependencies.SpringBoot.SPRING_BOOT_STARTER_WEB)
+    implementation(Dependencies.SpringBoot.SPRING_CONTEXT)
 
     testImplementation(Dependencies.SpringBoot.SPRING_BOOT_STARTER_TEST)
     testRuntimeOnly(Dependencies.SpringBoot.JUNIT_PLATFORM_LAUNCHER)

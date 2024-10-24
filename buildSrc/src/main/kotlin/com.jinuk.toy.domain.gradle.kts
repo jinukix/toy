@@ -22,7 +22,7 @@ dependencies {
     testImplementation(testFixtures(project(":infra:redis")))
 
     testFixturesImplementation(project(":util:faker"))
-    testFixturesImplementation(Dependencies.SpringBoot.SPRING_BOOT_STARTER_WEB)
+    testFixturesImplementation(Dependencies.SpringBoot.SPRING_BOOT_STARTER_TEST)
 }
 
 val bootJar: BootJar by tasks

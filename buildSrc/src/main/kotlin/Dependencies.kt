@@ -1,12 +1,15 @@
 object Dependencies {
     object SpringBoot {
         const val SPRING_BOOT_STARTER_WEB = "org.springframework.boot:spring-boot-starter-web"
+        const val SPRING_BOOT_STARTER_WEBFLUX = "org.springframework.boot:spring-boot-starter-webflux"
         const val SPRING_BOOT_STARTER_TEST = "org.springframework.boot:spring-boot-starter-test"
         const val SPRING_BOOT_STARTER_REDIS = "org.springframework.boot:spring-boot-starter-data-redis"
         const val SPRING_BOOT_STARTER_REDISSON = "org.redisson:redisson-spring-boot-starter:3.35.0"
         const val SPRING_BOOT_STARTER_DATA_JPA = "org.springframework.boot:spring-boot-starter-data-jpa"
         const val SPRING_BOOT_STARTER_SECURITY = "org.springframework.boot:spring-boot-starter-security"
         const val SPRING_BOOT_DATA_COMMONS = "org.springframework.data:spring-data-commons:3.3.3"
+
+        const val SPRING_CONTEXT = "org.springframework:spring-context"
 
         const val JUNIT_PLATFORM_LAUNCHER = "org.junit.platform:junit-platform-launcher"
     }
