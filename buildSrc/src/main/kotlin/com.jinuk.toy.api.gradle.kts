@@ -8,6 +8,5 @@ plugins {
 dependencies {
     implementation(project(":application"))
 
-    implementation(Dependencies.SpringBoot.SPRING_BOOT_STARTER_WEB)
     implementation(Dependencies.SpringBoot.SPRING_BOOT_DATA_COMMONS)
 }

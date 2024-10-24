@@ -1,0 +1,15 @@
+server:
+  port: 8090
+
+
+spring:
+  profiles:
+    include:
+      - infra-rdb
+      - infra-redis
+      - util-jwt
+    active: local
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
