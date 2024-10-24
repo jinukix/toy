@@ -1,6 +1,7 @@
 rootProject.name = "toy"
 
 include("mvc-api")
+include("webflux-api")
 
 // util
 include("util:faker")
